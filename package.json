@@ -1,0 +1,11 @@
+{
+  "name": "fendas-homebrew-5e-tools",
+  "version": "1.0.0",
+  "description": "Fendas Homebrew resource for 5e Tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dsalexan",
+  "license": "ISC"
+}
