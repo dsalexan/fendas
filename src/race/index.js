@@ -5,5 +5,5 @@ import dwarf from './dwarf'
 export default {
   fairy,
   human,
-  // dwarf,
+  dwarf,
 }

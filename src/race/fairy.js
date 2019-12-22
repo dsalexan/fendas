@@ -4,13 +4,27 @@ export default {
   page: 1,
   size: 'V',
   speed: {
-    walk: {
-      number: 10,
-      condition: '(25 ft. in humanoid form)',
-    },
-    fly: {
-      number: 50,
-      condition: '(30* ft. in humanoid form)',
+    alternate: {
+      walk: [
+        {
+          number: 10,
+          condition: '(tiny form)',
+        },
+        {
+          number: 25,
+          condition: '(humanoid form)',
+        },
+      ],
+      fly: [
+        {
+          number: 50,
+          condition: '(tiny form)',
+        },
+        {
+          number: 30,
+          condition: '(humanoid form, difficult terrain above 5 ft.)',
+        },
+      ],
     },
   },
   ability: [

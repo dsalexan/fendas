@@ -26,6 +26,7 @@ export default function generate(base = {}) {
     optionalFeatureTypes: {
       EXPT: 'Exploits',
     },
+    internalCopies: ['race'],
   }
 
   obj.race = Object.values(race)
