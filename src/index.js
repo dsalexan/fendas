@@ -1,6 +1,9 @@
+/* eslint-disable no-unused-vars */
 import { read, write } from '../utils/json'
 import { section, generate } from './generate'
 import subclass from './subclass'
+
+import v from '../schema/base'
 
 const FILE = './dist/fendas.json'
 

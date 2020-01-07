@@ -53,6 +53,7 @@ export default {
     },
     proficienciesGained: {
       armor: ['light', 'medium', 'shields'],
+      weapons: ['simple', 'martial'],
       skills: [
         {
           choose: {
@@ -70,7 +71,6 @@ export default {
           },
         },
       ],
-      weapons: ['simple', 'martial'],
     },
   },
   startingProficiencies: {

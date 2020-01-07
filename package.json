@@ -15,8 +15,12 @@
   "dependencies": {
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.19.1",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-git": "^2.10.0",
     "json-library": "^2.0.4",
     "jsonfile": "^5.0.0",
+    "jsonschema": "^1.2.5",
     "lodash": "^4.17.15",
     "module-alias": "^2.2.2",
     "require-dir": "^1.2.0"

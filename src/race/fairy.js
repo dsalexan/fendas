@@ -66,7 +66,7 @@ export default {
     {
       name: 'Flight',
       entries: [
-        "In tiny form you have a flying speed of 50 ft (or 15 m). To use this speed, you can’t be armor. In humanoid form you have a flying speed of 30 ft (or 9 m). The air is considered difficult terrain when you are further than 5 ft from solid ground, and if you remain in flight for more than a minute without touching down, you must succeed on a DC 10 Constitution saving throw or take a level of exhaustion (repeating the save for every minute of flight). To use this speed, you can't be wearing medium or heavy armor.",
+        "In tiny form you have a flying speed of 50 ft (or 15 m). To use this speed, you can’t be in armor. In humanoid form you have a flying speed of 30 ft (or 9 m). The air is considered difficult terrain when you are further than 5 ft from solid ground, and if you remain in flight for more than a minute without touching down, you must succeed on a DC 10 Constitution saving throw or take a level of exhaustion (repeating the save for every minute of flight). To use this speed, you can't be wearing medium or heavy armor.",
       ],
       type: 'entries',
     },

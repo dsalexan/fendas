@@ -21,7 +21,7 @@ export default {
                 type: 'list',
                 items: [
                   'Have a bonus of +1 to your AC.',
-                  'Have a Strength score of 15 plus your Martial Arts die.',
+                  'Have a Strength score of 13 plus your Martial Arts die.',
                   'You count as one size larger for calculating carrying capacity.',
                 ],
               },
@@ -37,7 +37,7 @@ export default {
                 type: 'list',
                 items: [
                   'Have a bonus yo tour AC equals to +1 for each 2 ki points spent (minimum +1).',
-                  'Have a Strength score of 15 + your martial arts die + 1 for each 2 ki points spent.',
+                  'Have a Strength score of 13 + your martial arts die + 1 for each 2 ki points spent.',
                   'You count as two sizes larger for calculating carrying capacity.',
                 ],
               },
@@ -55,9 +55,9 @@ export default {
             name: 'Legacy of the Starts',
             entries: [
               'The monk who bears the tradition of the Way of the Zoroaster learns how apply his ki to bend the space and the laws of physics around itself, willing himself to fly.',
-              'Beginning at the 6th level, you can spend 1 ki point to to cast fly, targeting yourself and only while not wearing armor or wielding a shield (and except that its not a spell or have magical proprieties). As well as the Breathing Techniques, the effects varies depending on your knowledge of the monastic tradition: ',
+              'Beginning at the 6th level, you can spend 3 ki points to cast fly without material components, targeting yourself and only while not wearing armor or wielding a shield (and except that its not a spell or have magical proprieties). As well as the Breathing Techniques, the effects varies depending on your knowledge of the monastic tradition: ',
               '{@b Disciple.} A additional modification to the regular fly spell is that your flight speed should equal your movement speed (and behaves the same way, being affected by encumbrance or dash actions).',
-              '{@b Master.} A additional modification to the regular fly spell is that you have hover speed equal to your movement speed (and behaves the same way, being affected by encumbrance or dash actions). Your flying speed is the one specified in the fly spell description.',
+              '{@b Master.} A additional modification to the regular fly spell is that you can hover and your flying speed is the one specified in the fly spell description plus your additional Unarmored Movement.',
             ],
           },
         ],
