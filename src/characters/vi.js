@@ -90,4 +90,16 @@ export default {
   // TODO: Infernal Legacy
   // tags
   languageTags: ['C', 'E', 'I'],
+  // fluff
+  _fluff: {
+    images: [
+      {
+        href: {
+          url: 'https://raw.githubusercontent.com/dsalexan/december-server/master/data/images/vithor.png',
+          type: 'external',
+        },
+        type: 'image',
+      },
+    ],
+  },
 }

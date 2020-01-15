@@ -103,4 +103,16 @@ export default {
   feat: ['{@feat sentinel}'],
   // tags
   languageTags: ['C', 'BR', 'S'],
+  // fluff
+  _fluff: {
+    images: [
+      {
+        href: {
+          url: 'https://raw.githubusercontent.com/dsalexan/december-server/master/data/images/celska.jpg',
+          type: 'external',
+        },
+        type: 'image',
+      },
+    ],
+  },
 }

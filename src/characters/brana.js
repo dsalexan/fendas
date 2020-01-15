@@ -26,7 +26,7 @@ export default {
   ],
   isNpc: false,
   page: 18,
-  size: 'M',
+  size: 'S',
   alignment: ['L', 'G'],
   ac: [
     {
@@ -99,7 +99,20 @@ export default {
       ability: 'wis',
     },
   ],
+  feats: ['{@feat alert}'],
   // tags
   languageTags: ['C', 'D'],
   spellcastingTags: ['CC'],
+  // fluff
+  _fluff: {
+    images: [
+      {
+        href: {
+          url: 'https://raw.githubusercontent.com/dsalexan/december-server/master/data/images/brana.jpg',
+          type: 'external',
+        },
+        type: 'image',
+      },
+    ],
+  },
 }
