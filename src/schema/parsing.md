@@ -30,6 +30,7 @@ skill.X (proficient boolean = false) -> X (remove)
 
 ## SENSES
 senses.X (valueObject) -> (string) senses.X
+Remove if empty
 
 ## PASSIVE
 skill.perception + 10 -> (stirng) passive
@@ -37,10 +38,16 @@ skill.perception + 10 -> (stirng) passive
 ### Require field
 Passive is a required field, so I will have to inject that on the final parsing
 
+## LANGUAGES
+Remove if empty
+
 ## PROFICIENCIES/FEAT/FEATURE
 proficiencies -> turn it into trait
 feat -> turn it into trait
 feature -> turn it into trait
+
+## SPELLCASTING
+Remove if empty
 
 ## _ROLLS
 _rolls -> X (remove)

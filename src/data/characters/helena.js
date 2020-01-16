@@ -22,7 +22,7 @@ export default {
       },
     },
   ],
-  isNpc: false,
+  isNpc: true,
   page: 21,
   size: 'M',
   alignment: ['L', 'G'],

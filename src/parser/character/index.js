@@ -93,6 +93,10 @@ export function bestiary(characters) {
             ? sense
             : `${sense.name} ${sense.value + (_.isInteger(sense.value) ? ' ft.' : '')} (${sense.condition})`,
         )
+
+        if (mon.senses.length === 0) {
+          delete mon.senses
+        }
       }
       // PASSIVE
       mon.passive = 10 + characterSkillBonus(char, 'perception', false)
@@ -101,6 +105,23 @@ export function bestiary(characters) {
       delete mon.proficiencies
       delete mon.feat
       delete mon.feature
+
+      // LANGUAGES
+      if (mon.languages && mon.languages.length === 0) {
+        delete mon.languages
+      }
+
+      // SPELLCASTING
+      if (mon.spellcasting && mon.spellcasting.length === 0) {
+        delete mon.spellcasting
+      }
+
+      // TOKENURL
+      if (!mon.tokenUrl && mon.fluff && mon.fluff.images && mon.fluff.images.length > 0) {
+        if (mon.fluff.images[0].type === 'image' && mon.fluff.images[0].href.type === 'external') {
+          mon.tokenUrl = mon.fluff.images[0].href.url
+        }
+      }
 
       // _ROLLS/_HP/_CONDITIONS/_COLOR
       delete mon._rolls
