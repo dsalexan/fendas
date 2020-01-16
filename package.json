@@ -12,6 +12,7 @@
   "author": "dsalexan",
   "license": "ISC",
   "dependencies": {
+    "ajv": "^6.10.2",
     "debug": "^4.1.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.19.1",
@@ -41,7 +42,6 @@
     "prettier": "^1.19.1"
   },
   "_moduleAliases": {
-    "@": "./src",
     "~": "./src"
   }
 }

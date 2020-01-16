@@ -12,7 +12,7 @@ function MiscUtils_get(object, ...path) {
 }
 
 function loadJSON(file) {
-  const data = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '') // strip BOM
+  const data = fs.readFileSync(`./${file}`, 'utf8').replace(/^\uFEFF/, '') // strip BOM
   return JSON.parse(data)
 }
 

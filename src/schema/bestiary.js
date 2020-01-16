@@ -38,6 +38,8 @@ const REGEX_ABILITIES_ABBREVIATIONS = `(${LIST_ABILITY_ABBREVIATIONS.join('|')})
 const REGEX_SKILLS = `(${LIST_SKILLS.join('|')})`
 
 const xii_bestiary = {
+  $schema: 'http://json-schema.org/draft-07/schema#',
+  version: '1.0.0',
   title: 'XII Bestiary Schema',
   id: 'xii-bestiary.json',
   type: 'object',
@@ -124,7 +126,7 @@ const xii_bestiary = {
       type: 'object',
       $$merge: [
         {
-          $ref: 'bestiary.json#/definitions/creatureData',
+          $ref: 'bestiary/bestiary.json#/definitions/creatureData',
         },
         {
           background: {
@@ -647,9 +649,8 @@ const xii_bestiary = {
 const cacheDir = process.cwd()
 process.chdir(`${cacheDir}/src/schema/tools`)
 
-const validate = (instance) => v.validate(instance, preprocess(xii_bestiary))
+v.addSchema(preprocess(xii_bestiary), 'xii-bestiary.json')
 
 process.chdir(cacheDir) // restore working directory
 
-debugger
-export default validate
+export default (instance) => v.validate('xii-bestiary.json', instance)
