@@ -38,6 +38,7 @@ export default function generate(base = {}) {
   obj.background = Object.values(background)
   obj.optionalfeature = optional_feature
   obj.spell = spell
+  obj.monster = asBestiary
 
   return obj
 }

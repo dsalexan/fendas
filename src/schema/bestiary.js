@@ -645,7 +645,7 @@ const xii_bestiary = {
 }
 
 const cacheDir = process.cwd()
-process.chdir(`${cacheDir}/schema/tools`)
+process.chdir(`${cacheDir}/src/schema/tools`)
 
 const validate = (instance) => v.validate(instance, preprocess(xii_bestiary))
 

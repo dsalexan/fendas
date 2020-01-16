@@ -28,7 +28,7 @@ function readFiles(dirname) {
 }
 
 const cacheDir = process.cwd()
-process.chdir(`${cacheDir}/schema/tools`)
+process.chdir(`${cacheDir}/src/schema/tools`)
 
 const files = readFiles('./')
 function getContent(entry) {

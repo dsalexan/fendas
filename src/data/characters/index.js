@@ -26,7 +26,9 @@ const RAW = {
   isabel,
 }
 
+export const asBestiary = bestiary(Object.values(RAW))
+
 export default {
   ...RAW,
-  asBestiary: bestiary(Object.values(RAW)),
+  asBestiary,
 }
