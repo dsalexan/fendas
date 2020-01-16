@@ -45,7 +45,7 @@ export function bestiary(characters) {
         return undefined
       }
 
-      const mon = char
+      const mon = _.cloneDeep(char)
 
       // BACKGROUND
       delete mon.background
