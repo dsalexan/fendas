@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node ./src/index.js"
-  },
-  "_moduleAliases": {
-    "@": "./"
+    "start": "babel-node ./src/index.js",
+    "fix": "eslint --ext .js --ignore-path .gitignore . --fix",
+    "alias": "link-module-alias"
   },
   "author": "dsalexan",
   "license": "ISC",
   "dependencies": {
+    "debug": "^4.1.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.19.1",
     "gulp": "^4.0.2",
@@ -23,7 +23,8 @@
     "jsonschema": "^1.2.5",
     "lodash": "^4.17.15",
     "module-alias": "^2.2.2",
-    "require-dir": "^1.2.0"
+    "require-dir": "^1.2.0",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -36,6 +37,11 @@
     "eslint-loader": "^3.0.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.0.1",
+    "link-module-alias": "^1.2.0",
     "prettier": "^1.19.1"
+  },
+  "_moduleAliases": {
+    "@": "./src",
+    "~": "./src"
   }
 }

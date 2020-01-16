@@ -16,7 +16,22 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-underscore-dangle": "off",
-    "camelcase": "off"
+    "camelcase": 'off',
+    'max-len': [
+      'warn',
+      {
+        code: 130
+      }
+    ],
+    'prefer-destructuring': 'error',
+    'radix': 'off',
+    'default-case': 'off',
+    'no-nested-ternary': 'off',
+    'no-use-before-define': 'off',
+    'no-param-reassign': 'off',
+    'prefer-destructuring': 'off',
+    'import/no-named-as-default-member': 'off',
+    'no-bitwise': 'off'
   },
   parserOptions: {
     "parser": "babel-eslint",

@@ -105,4 +105,10 @@ dist
 
 
 
-schema/tools/**/*
+src/schema/december/**/*
+src/schema/tools/**/*
+src/domain/**/*
+src/utils/**/*
+schema/**/*
+domain/**/*
+utils/**/*
