@@ -1,7 +1,7 @@
 export default {
   name: 'Faenor Turon',
   shortName: 'Faenor',
-  alias: 'Dominus',
+  alias: ['Dominus'],
   source: 'Fendas',
   type: {
     type: 'humanoid',

@@ -1,6 +1,6 @@
 export default {
   name: 'Celka',
-  alias: 'Celska of Mier',
+  alias: ['Celska of Mier'],
   source: 'Fendas',
   type: {
     type: 'humanoid',

@@ -1,6 +1,6 @@
 export default {
   name: "Med'an",
-  alias: 'Rodrick',
+  alias: ['Rodrick'],
   source: 'Fendas',
   type: {
     type: 'humanoid',

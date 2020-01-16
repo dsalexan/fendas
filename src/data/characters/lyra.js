@@ -1,6 +1,6 @@
 export default {
   name: 'Briar Rose',
-  alias: 'Lyra',
+  alias: ['Lyra'],
   source: 'Fendas',
   type: {
     type: ['humanoid', 'fey'],

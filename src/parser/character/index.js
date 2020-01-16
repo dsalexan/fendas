@@ -80,7 +80,11 @@ export function bestiary(characters) {
       }
       // SKILL
       if (_.isObjectLike(mon.skill)) {
-        SKILLS._.LIST_SKILLS.map((skill) => (mon.skill[skill] = characterSkillBonus(char, skill, true)))
+        SKILLS._.LIST_SKILLS.forEach((skill) => {
+          const ps = char.skill[skill]
+          if (!ps) delete mon.skill[skill]
+          else mon.skill[skill] = characterSkillBonus(char, skill, true)
+        })
       }
       // SENSES
       if (_.isArray(mon.skill)) {
