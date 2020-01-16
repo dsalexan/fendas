@@ -87,7 +87,7 @@ export function bestiary(characters) {
         })
       }
       // SENSES
-      if (_.isArray(mon.skill)) {
+      if (_.isArray(mon.senses)) {
         mon.senses = mon.senses.map((sense) =>
           _.isString(sense)
             ? sense
