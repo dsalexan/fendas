@@ -1,12 +1,14 @@
 import _ from 'lodash'
 
-import race from './race'
-import deity from './deity'
-import classe from './class'
-import subclass from './subclass'
-import background from './background'
-import optional_feature from './optional_feature'
-import spell from './spell'
+import race from './data/race'
+import deity from './data/deity'
+import classe from './data/class'
+import subclass from './data/subclass'
+import background from './data/background'
+import optional_feature from './data/optional_feature'
+import spell from './data/spell'
+
+import { asBestiary } from './data/characters'
 
 export default function generate(base = {}) {
   const obj = _.extend({}, base)
