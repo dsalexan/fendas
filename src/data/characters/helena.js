@@ -1,5 +1,4 @@
 export default {
-  _id: 'dawnbringer-helena-fcs',
   name: 'Helena',
   source: 'Fendas',
   type: {
@@ -44,7 +43,6 @@ export default {
   hp: {
     // 89
     rolls: [10, 8, 10, 2, 10, 6, 10, 8, 7], // 71
-    bonus: [18], // CON * 9
   },
   speed: {
     walk: 30,
@@ -96,6 +94,7 @@ export default {
   feat: ['{@feat war caster}'],
   spellcasting: [
     {
+      type: 'spellcasting',
       name: 'Spellcasting',
       ability: 'cha',
     },

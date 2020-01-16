@@ -31,7 +31,9 @@ module.exports = {
     'no-param-reassign': 'off',
     'prefer-destructuring': 'off',
     'import/no-named-as-default-member': 'off',
-    'no-bitwise': 'off'
+    'no-bitwise': 'off',
+    'no-multi-str': 'off',
+    'no-return-assign': 'off'
   },
   parserOptions: {
     "parser": "babel-eslint",

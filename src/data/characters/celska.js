@@ -1,7 +1,6 @@
 export default {
-  _id: 'b-celska-fcs',
-  name: 'Celka of Mier',
-  shortName: 'Celska',
+  name: 'Celka',
+  alias: 'Celska of Mier',
   source: 'Fendas',
   type: {
     type: 'humanoid',
@@ -52,7 +51,6 @@ export default {
   ],
   hp: {
     rolls: [10, 5, 6, 9, 12], // 42
-    bonus: [5], // CON * 5
   },
   speed: {
     walk: 30,
@@ -104,7 +102,7 @@ export default {
   // tags
   languageTags: ['C', 'BR', 'S'],
   // fluff
-  _fluff: {
+  fluff: {
     images: [
       {
         href: {

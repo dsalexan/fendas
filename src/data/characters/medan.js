@@ -1,7 +1,6 @@
 export default {
-  _id: 'b-medan-fcs',
   name: "Med'an",
-  shortName: "Med'an",
+  alias: 'Rodrick',
   source: 'Fendas',
   type: {
     type: 'humanoid',
@@ -49,7 +48,6 @@ export default {
   ],
   hp: {
     rolls: [6, 3, 4, 3, 8], // 24
-    bonus: [15], // CON * 5
   },
   speed: {
     walk: 30,
@@ -95,10 +93,12 @@ export default {
   feat: ['{@feat keen mind}', '{@feat spell sniper}'],
   spellcasting: [
     {
+      type: 'spellcasting',
       name: 'Spellcasting',
       ability: 'int',
     },
     {
+      type: 'spellcasting',
       name: 'Pact Magic',
       ability: 'cha',
     },
@@ -107,7 +107,7 @@ export default {
   languageTags: ['C', 'E', 'S', 'DR'],
   spellcastingTags: ['CL', 'CW'],
   // fluff
-  _fluff: {
+  fluff: {
     images: [
       {
         href: {

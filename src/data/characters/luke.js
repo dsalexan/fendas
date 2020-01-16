@@ -1,10 +1,9 @@
 export default {
-  _id: 'lukeundel-fcs',
   name: 'Luke Undell',
   shortName: 'Luke',
   source: 'Fendas',
   type: {
-    type: 'Humanoid',
+    type: 'humanoid',
     tags: ['Human', 'Variant Human'],
   },
   background: {
@@ -46,7 +45,6 @@ export default {
   ],
   hp: {
     rolls: [8, 4, 8, 7, 8], // 35
-    bonus: [10], // CON * 5
   },
   speed: {
     walk: {

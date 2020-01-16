@@ -1,5 +1,4 @@
 export default {
-  _id: 'b-vithorkharvalhus-fcs',
   name: "Vi'Thor Khar'Valhus",
   shortName: "Vi'Thor",
   source: 'Fendas',
@@ -41,7 +40,6 @@ export default {
   ],
   hp: {
     rolls: [8, 3, 4, 7, 5], // 27
-    bonus: [15], // CON * 5
   },
   speed: {
     walk: 30,
@@ -91,7 +89,7 @@ export default {
   // tags
   languageTags: ['C', 'E', 'I'],
   // fluff
-  _fluff: {
+  fluff: {
     images: [
       {
         href: {

@@ -50,7 +50,7 @@ function makeValidator() {
   const ajv = new Ajv()
 
   ajv.addSchema(preprocess(loadJSON('spells/spells.json', 'utf8')), 'spells.json')
-  ajv.addSchema(preprocess(loadJSON('bestiary/bestiary.json', 'utf8')), 'bestiary.json')
+  // ajv.addSchema(preprocess(loadJSON('bestiary/bestiary.json', 'utf8')), 'bestiary.json')
   ajv.addSchema(preprocess(loadJSON('entry.json', 'utf8')), 'entry.json')
   ajv.addSchema(preprocess(loadJSON('util.json', 'utf8')), 'util.json')
 
@@ -58,7 +58,7 @@ function makeValidator() {
 
   // Get schema files, ignoring directories
   const schemaFiles = fs
-    .readdirSync(`${cacheDir}/test/schema`)
+    .readdirSync(`${cacheDir}/src/schema/tools`)
     .filter((file) => file.endsWith('.json') && !SCHEMA_BLACKLIST.has(file))
 
   schemaFiles.map((file) => ajv.addSchema(preprocess(loadJSON(file)), file))
@@ -72,4 +72,4 @@ function makeValidator() {
   return ajv
 }
 
-export default makeValidator()
+export default makeValidator

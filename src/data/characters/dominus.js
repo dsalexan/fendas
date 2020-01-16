@@ -1,6 +1,7 @@
 export default {
-  _id: 'b-dominus-fcs',
-  name: 'Dominus',
+  name: 'Faenor Turon',
+  shortName: 'Faenor',
+  alias: 'Dominus',
   source: 'Fendas',
   type: {
     type: 'humanoid',
@@ -39,7 +40,6 @@ export default {
   ],
   hp: {
     rolls: [8, 2, 6, 4, 5], // 25
-    bonus: [15], // CON * 5
   },
   speed: {
     walk: 30,
@@ -90,6 +90,7 @@ export default {
   languages: ['Common', 'Elvish'],
   spellcasting: [
     {
+      type: 'spellcasting',
       name: 'Pact Magic',
       ability: 'cha',
     },
@@ -99,7 +100,7 @@ export default {
   languageTags: ['C', 'E'],
   spellcastingTags: ['CL'],
   // fluff
-  _fluff: {
+  fluff: {
     images: [
       {
         href: {

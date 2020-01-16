@@ -34,14 +34,13 @@ senses.X (valueObject) -> (string) senses.X
 ## PASSIVE
 skill.perception + 10 -> (stirng) passive
 
+### Require field
+Passive is a required field, so I will have to inject that on the final parsing
+
 ## PROFICIENCIES/FEAT/FEATURE
 proficiencies -> turn it into trait
 feat -> turn it into trait
 feature -> turn it into trait
-
-### Require field
-Passive is a required field, so I will have to inject that on the final parsing
-
 
 ## _ROLLS
 _rolls -> X (remove)

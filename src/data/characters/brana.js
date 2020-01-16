@@ -1,5 +1,4 @@
 export default {
-  _id: 'b-branahammerrein-fcs',
   name: 'Brana Hammerrein',
   shortName: 'Brana',
   source: 'Fendas',
@@ -44,7 +43,7 @@ export default {
   ],
   hp: {
     rolls: [8, 4, 3, 8, 5], // 28
-    bonus: [10, 5], // CON * 5, DWARVEN RESILIENCE
+    bonus: [5], // DWARVEN RESILIENCE
   },
   speed: {
     walk: 25,
@@ -95,23 +94,25 @@ export default {
   languages: ['Common', 'Dwarvish'],
   spellcasting: [
     {
+      type: 'spellcasting',
       name: 'Spellcasting',
       ability: 'wis',
     },
   ],
-  feats: ['{@feat alert}'],
+  feat: ['{@feat alert}'],
   // tags
   languageTags: ['C', 'D'],
   spellcastingTags: ['CC'],
   // fluff
-  _fluff: {
+  fluff: {
+    entries: [],
     images: [
       {
+        type: 'image',
         href: {
           url: 'https://raw.githubusercontent.com/dsalexan/december-server/master/data/images/brana.jpg',
           type: 'external',
         },
-        type: 'image',
       },
     ],
   },

@@ -1,6 +1,6 @@
 export default {
-  _id: 'b-lyra-fcs',
-  name: 'Lyra',
+  name: 'Briar Rose',
+  alias: 'Lyra',
   source: 'Fendas',
   type: {
     type: ['humanoid', 'fey'],
@@ -133,6 +133,7 @@ export default {
   languages: ['Common', 'Elvish', 'Sylvan'],
   spellcasting: [
     {
+      type: 'spellcasting',
       name: 'Spellcasting',
       ability: 'cha',
     },
@@ -141,7 +142,7 @@ export default {
   languageTags: ['C', 'E', 'S'],
   spellcastingTags: ['CB'],
   // fluff
-  _fluff: {
+  fluff: {
     images: [
       {
         href: {

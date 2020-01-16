@@ -1,5 +1,4 @@
 export default {
-  _id: 'whitewater-isabelwestmoreland-fcs',
   name: 'Isabel Westmoreland',
   shortName: 'Isabel',
   source: 'Fendas',
@@ -7,7 +6,7 @@ export default {
     type: 'humanoid',
     tags: ['human'],
   },
-  cr: 5,
+  cr: '5',
   isNpc: true,
   page: 22,
   size: 'M',
@@ -62,6 +61,7 @@ export default {
   languages: ['Common', 'Abyssal'],
   spellcasting: [
     {
+      type: 'spellcasting',
       name: 'Innate Magic',
       ability: 'cha',
     },
@@ -71,7 +71,7 @@ export default {
   languageTags: ['C', 'A'],
   spellcastingTags: ['I', 'CL'],
   // fluff
-  _fluff: {
+  fluff: {
     images: [
       {
         href: {

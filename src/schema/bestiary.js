@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 // {
 // 	"$schema": "http://json-schema.org/draft-07/schema#",
 // 	"version": "1.13.3",
@@ -7,8 +9,9 @@
 // 	"definitions": {},
 // 	"properties": {}
 // }
-import v from './base'
+import makeBaseValidator from './base'
 import preprocess from './pre'
+import json from '../utils/json'
 
 const LIST_SKILLS = [
   'athletics',
@@ -37,98 +40,94 @@ const LIST_ABILITY_ABBREVIATIONS = ['str', 'dex', 'con', 'int', 'wis', 'cha']
 const REGEX_ABILITIES_ABBREVIATIONS = `(${LIST_ABILITY_ABBREVIATIONS.join('|')})`
 const REGEX_SKILLS = `(${LIST_SKILLS.join('|')})`
 
-const xii_bestiary = {
-  $schema: 'http://json-schema.org/draft-07/schema#',
-  version: '1.0.0',
-  title: 'XII Bestiary Schema',
-  id: 'xii-bestiary.json',
-  type: 'object',
-  definitions: {
-    level: {
-      type: 'object',
-      properties: {
-        level: {
-          type: ['integer', 'string'],
-          required: true,
-        },
-        takenAt: {
-          type: 'array',
-          uniqueItems: true,
-          items: {
+const bestiary = json.readSync(`${__dirname}/tools/bestiary/bestiary.json`)
+const xii_bestiary = _.mergeWith(
+  bestiary,
+  {
+    title: '(XII) Bestiary Schema',
+    type: 'object',
+    definitions: {
+      level: {
+        type: 'object',
+        properties: {
+          level: {
             type: ['integer', 'string'],
           },
-        },
-        class: {
-          anyOf: [
-            { type: 'string' },
-            {
-              type: 'object',
-              properties: {
-                name: {
-                  type: 'string',
-                  required: true,
-                },
-                source: {
-                  type: 'string',
-                },
-              },
+          takenAt: {
+            type: 'array',
+            uniqueItems: true,
+            items: {
+              type: ['integer', 'string'],
             },
-          ],
-        },
-        subclass: {
-          anyOf: [
-            { type: 'string' },
-            {
-              type: 'object',
-              properties: {
-                name: {
-                  type: 'string',
-                  required: true,
+          },
+          class: {
+            oneOf: [
+              { type: 'string' },
+              {
+                type: 'object',
+                properties: {
+                  name: {
+                    type: 'string',
+                  },
+                  source: {
+                    type: 'string',
+                  },
                 },
-                source: {
-                  type: 'string',
-                },
+                required: ['name'],
               },
-            },
-          ],
+            ],
+          },
+          subclass: {
+            oneOf: [
+              { type: 'string' },
+              {
+                type: 'object',
+                properties: {
+                  name: {
+                    type: 'string',
+                  },
+                  source: {
+                    type: 'string',
+                  },
+                },
+                required: ['name'],
+              },
+            ],
+          },
         },
+        required: ['level'],
       },
-    },
-    proficiency: {
-      type: 'object',
-      properties: {
-        ratio: {
-          type: 'number',
+      proficiency: {
+        type: 'object',
+        properties: {
+          ratio: {
+            type: 'number',
+          },
+          bonus: {
+            type: 'integer',
+          },
         },
-        bonus: {
-          type: 'integer',
-        },
+        required: ['ratio'],
       },
-      required: ['ratio'],
-    },
-    valueObject: {
-      type: 'object',
-      properties: {
-        name: {
-          type: 'string',
+      valueObject: {
+        type: 'object',
+        properties: {
+          name: {
+            type: 'string',
+          },
+          value: {
+            type: ['string', 'integer'],
+          },
+          condition: {
+            type: 'string',
+          },
         },
-        value: {
-          type: ['string', 'integer'],
-        },
-        condition: {
-          type: 'string',
-        },
+        required: ['name'],
       },
-      required: ['name'],
-    },
 
-    characterData: {
-      type: 'object',
-      $$merge: [
-        {
-          $ref: 'bestiary/bestiary.json#/definitions/creatureData',
-        },
-        {
+      creatureData: {
+        type: 'object',
+        properties: {
           background: {
             type: 'object',
             properties: {
@@ -143,8 +142,9 @@ const xii_bestiary = {
           },
           level: {
             description:
-              '[Creature] Used in sidekicks, which can have levels (and generally do not have alignment). [Character] Used to describe the characters levels and classes.',
-            anyOf: [
+              '[Creature] Used in sidekicks, which can have levels (and generally do not have alignment).\
+             [Character] Used to describe the characters levels and classes.',
+            oneOf: [
               {
                 type: 'integer',
               },
@@ -155,15 +155,17 @@ const xii_bestiary = {
               {
                 type: 'array',
                 items: {
-                  type: {
-                    $ref: '#/definitions/level',
-                  },
+                  $ref: '#/definitions/level',
                 },
               },
             ],
           },
           size: {
             oneOf: [
+              {
+                type: 'string',
+                enum: ['F', 'D', 'T', 'S', 'M', 'L', 'H', 'G', 'C', 'V'],
+              },
               {
                 type: 'array',
                 items: {
@@ -179,6 +181,7 @@ const xii_bestiary = {
                           type: 'string',
                         },
                       },
+                      required: ['size'],
                     },
                     {
                       type: 'string',
@@ -187,19 +190,75 @@ const xii_bestiary = {
                   ],
                 },
               },
-              {
-                type: 'string',
-                enum: ['F', 'D', 'T', 'S', 'M', 'L', 'H', 'G', 'C', 'V'],
-              },
             ],
           },
           type: {
             oneOf: [
               {
+                type: 'string',
+                enum: [
+                  'aberration',
+                  'beast',
+                  'celestial',
+                  'construct',
+                  'dragon',
+                  'elemental',
+                  'fey',
+                  'fiend',
+                  'giant',
+                  'humanoid',
+                  'monstrosity',
+                  'ooze',
+                  'plant',
+                  'undead',
+                ],
+              },
+              {
+                type: 'array',
+                items: {
+                  type: 'string',
+                  enum: [
+                    'aberration',
+                    'beast',
+                    'celestial',
+                    'construct',
+                    'dragon',
+                    'elemental',
+                    'fey',
+                    'fiend',
+                    'giant',
+                    'humanoid',
+                    'monstrosity',
+                    'ooze',
+                    'plant',
+                    'undead',
+                  ],
+                },
+              },
+              {
                 type: 'object',
                 properties: {
                   type: {
                     oneOf: [
+                      {
+                        type: 'string',
+                        enum: [
+                          'aberration',
+                          'beast',
+                          'celestial',
+                          'construct',
+                          'dragon',
+                          'elemental',
+                          'fey',
+                          'fiend',
+                          'giant',
+                          'humanoid',
+                          'monstrosity',
+                          'ooze',
+                          'plant',
+                          'undead',
+                        ],
+                      },
                       {
                         type: 'array',
                         items: {
@@ -221,25 +280,6 @@ const xii_bestiary = {
                             'undead',
                           ],
                         },
-                      },
-                      {
-                        type: 'string',
-                        enum: [
-                          'aberration',
-                          'beast',
-                          'celestial',
-                          'construct',
-                          'dragon',
-                          'elemental',
-                          'fey',
-                          'fiend',
-                          'giant',
-                          'humanoid',
-                          'monstrosity',
-                          'ooze',
-                          'plant',
-                          'undead',
-                        ],
                       },
                     ],
                   },
@@ -274,47 +314,6 @@ const xii_bestiary = {
                 },
                 required: ['type'],
                 additionalProperties: false,
-              },
-              {
-                type: 'array',
-                items: {
-                  type: 'string',
-                  enum: [
-                    'aberration',
-                    'beast',
-                    'celestial',
-                    'construct',
-                    'dragon',
-                    'elemental',
-                    'fey',
-                    'fiend',
-                    'giant',
-                    'humanoid',
-                    'monstrosity',
-                    'ooze',
-                    'plant',
-                    'undead',
-                  ],
-                },
-              },
-              {
-                type: 'string',
-                enum: [
-                  'aberration',
-                  'beast',
-                  'celestial',
-                  'construct',
-                  'dragon',
-                  'elemental',
-                  'fey',
-                  'fiend',
-                  'giant',
-                  'humanoid',
-                  'monstrosity',
-                  'ooze',
-                  'plant',
-                  'undead',
-                ],
               },
             ],
           },
@@ -354,7 +353,7 @@ const xii_bestiary = {
                   bonus: {
                     description:
                       'This is here for the cases when some feature interferes with the regular sum of rolls + CON',
-                    anyOf: [
+                    oneOf: [
                       {
                         type: 'integer',
                       },
@@ -454,7 +453,7 @@ const xii_bestiary = {
               {
                 type: 'array',
                 items: {
-                  anyOf: [
+                  oneOf: [
                     {
                       type: 'string',
                     },
@@ -526,16 +525,19 @@ const xii_bestiary = {
             ],
           },
           // XII (PERSISTENT LIVE STATS)
+          _id: {
+            type: 'string',
+          },
           _rolls: {
             type: 'object',
             properties: {
               initiative: {
-                $ref: 'dice.json#/definitions/dice',
+                $ref: 'dice.json',
               },
             },
           },
           _hp: {
-            anyOf: [
+            oneOf: [
               {
                 type: 'integer',
               },
@@ -583,74 +585,37 @@ const xii_bestiary = {
             type: 'string',
           },
         },
-      ],
-    },
-    character: {
-      anyOf: [
-        {
-          type: 'object',
-          $comment:
-            "This is a custom pre-processor tag, which merges together the array of objects into one. This allows proper inheritance, which JSON schema don't really do.",
-          $$merge: [
-            {
-              $ref: '#/definitions/characterData',
-            },
-            {
-              required: [
-                'name',
-                'size',
-                'type',
-                'source',
-                'ac',
-                'hp',
-                'speed',
-                'str',
-                'dex',
-                'con',
-                'int',
-                'wis',
-                'cha',
-                // 'passive',
-              ],
-            },
-          ],
-        },
-        {
-          type: 'object',
-          $comment:
-            "This is a custom pre-processor tag, which merges together the array of objects into one. This allows proper inheritance, which JSON schema don't really do.",
-          $$merge: [
-            {
-              $ref: '#/definitions/characterData',
-            },
-            {
-              $ref: 'util.json#/definitions/copyBlock',
-            },
-          ],
-        },
-      ],
-    },
-  },
-  properties: {
-    monster: {
-      type: 'array',
-      uniqueItems: true,
-      items: {
-        $ref: '#/definitions/character',
       },
     },
-    _meta: {
-      $ref: 'util.json#/definitions/metaBlock',
-    },
+    additionalProperties: false,
   },
-  additionalProperties: false,
-}
+  // eslint-disable-next-line no-unused-vars
+  (obj, src, key, object, source) => {
+    if (_.isObjectLike(obj) || _.isObjectLike(src)) {
+      const KEYS = ['oneOf', 'anyOf', 'patternProperties']
+
+      const objHas = _.isObjectLike(obj) && KEYS.reduce((bool, k) => bool || Object.keys(obj).includes(k), false)
+      const srcHas = _.isObjectLike(src) && KEYS.reduce((bool, k) => bool || Object.keys(src).includes(k), false)
+
+      if (objHas || srcHas) {
+        return src
+      }
+    }
+  },
+)
+
+const v1 = makeBaseValidator()
+const v2 = makeBaseValidator()
 
 const cacheDir = process.cwd()
 process.chdir(`${cacheDir}/src/schema/tools`)
 
-v.addSchema(preprocess(xii_bestiary), 'xii-bestiary.json')
+v1.addSchema(preprocess(xii_bestiary), 'bestiary.json')
+v2.addSchema(preprocess(bestiary), 'bestiary.json')
 
 process.chdir(cacheDir) // restore working directory
 
-export default (instance) => v.validate('xii-bestiary.json', instance)
+export default {
+  xii: v1,
+  tools: v2,
+}
