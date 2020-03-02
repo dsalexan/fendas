@@ -117,6 +117,7 @@ export function bestiary(characters) {
       }
 
       // TOKENURL
+      // TODO: Generate a token file
       if (!mon.tokenUrl && mon.fluff && mon.fluff.images && mon.fluff.images.length > 0) {
         if (mon.fluff.images[0].type === 'image' && mon.fluff.images[0].href.type === 'external') {
           mon.tokenUrl = mon.fluff.images[0].href.url

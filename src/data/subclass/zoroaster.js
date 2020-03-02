@@ -2,7 +2,7 @@ export default {
   class: 'Monk',
   name: 'Way of the Zoroaster',
   source: 'Fendas',
-  shortName: 'Zoroaster (Fendas)',
+  shortName: 'Zoroaster (FCS)',
   page: 3,
   subclassFeatures: [
     [

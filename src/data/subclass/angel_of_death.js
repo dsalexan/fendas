@@ -1,7 +1,7 @@
 export default {
   class: 'Warlock',
   name: 'The Angel of Death',
-  shortName: 'Angel of Death (Fendas)',
+  shortName: 'Angel of Death (FCS)',
   source: 'Fendas',
   page: 9,
   subclassFeatures: [
@@ -26,7 +26,7 @@ export default {
                   ['2nd', '{@spell blindness/deafness}, {@spell phantasmal force}'],
                   ['3rd', "{@spell azrael's black hole sun|Fendas}, {@spell feign death}"],
                   ['4th', "{@spell phantasmal killer}, {@spell evard's black tentacles}"],
-                  ['5th', '{@spell cloudkill}, {@spell hallow}'],
+                  ['5th', '{@spell reincarnate}, {@spell planar binding}'],
                 ],
               },
             ],
@@ -45,21 +45,11 @@ export default {
       {
         entries: [
           {
-            name: 'Master of Death',
+            name: 'Near-Death Experience',
             entries: [
-              'The will of your patron flows through you, and you have become versed in channeling it into the bones of the dead to raise powerful, combat-ready servants.',
-              'Once you reach 6th level, you may, as an action, use a warlock spell slot to raise one undead minion (either a skeleton elite, flame skeleton, warhore skeleton or similar) from a corresponding pile of bones or corpse within 10 feet. Exceptionally, a warhorse raised this way cannot attack.',
-              'Undead creatures raised by this feature gain the following benefits:',
-              {
-                type: 'list',
-                items: [
-                  "The creature's hit point maximum is increased by an amount equal to your warlock level.",
-                  'The creature adds your proficiency bonus to its damage rolls from attacks.',
-                ],
-              },
-              'You may raise up to two creatures instead of one at 7th level, and up to three creatures at 9th level.',
-              'On each of your turns, you can use a bonus action to mentally command any creature you made with this ability if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of the at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.',
-              'These creatures last until they are killed or until the end of the next short or long rest, upon which they crumble into dust. If these creatures would expire due to a rest, you can instead gain one less warlock spell slot from the rest per each spell slot spent on this to feature to keep them active.',
+              'The will of your patron flows through you, and you have become versed in channeling it into blurring the limitations of the living.',
+              "Once you reach 6th level, you may, as a reaction, empower a entity to resist death itself. A creature of your choosing in 60 ft does not fall uncounscious or dead by hitting 0 or less hit points (however it continues to make death saving throws each of its rounds, even if it normally wouldn't). If it succeeds its death saving throws, the creature gains 1 point of exhaustion.",
+              'You can only use this feature once per long rest, and a creature can only be targeted by this feature once a week.',
             ],
           },
         ],

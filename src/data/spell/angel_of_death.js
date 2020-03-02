@@ -46,7 +46,7 @@ export default [
       ],
     },
     entries: [
-      'You touch the material components, igniting a black flame with the blessing of Azrael, the Angel of Death. This flame grows into a dark fire, lasting as long as there is material to be consumed and shaping itself as a sphere of fire with 1 foot of diameter.',
+      'You touch the material components, igniting a black flame with the blessing of Azrael, the Angel of Death. This flame grows into a dark fire, shaping itself as a sphere of fire with 1 foot of diameter.',
       'At any moment you can call upon some magnetic aspects of this black blaze, drawing flames from any sources in 60 feet to feed the "black sun".',
       'You can throw this orb of fire up to 150 feet, and each creature in a 20-foot-radius sphere centered on the impact point must make a Dexterity saving throw. A target takes 6d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried, and burns until this object completely turns into ash.',
       'For each source it absorved, the sphere grows 1 foot in diameter (the impact radius then growing 5-foot in radius) and the damage increases by 1d4 necrotic damage.',
