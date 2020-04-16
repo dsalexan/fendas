@@ -1,7 +1,7 @@
 export default [
   {
     name: 'Titania',
-    source: 'FCS',
+    source: 'Fendas',
     page: 223,
     baseItem: 'greatsword|phb',
     type: 'M',
@@ -25,7 +25,7 @@ export default [
         entries: [
           'When wielded by a fairy this weapon becomes lighter, changing its properties to Versatile (1d12) and Finesse.',
           'Feeding fairy blood to the weapon (around 1 pint, half a liter) achives the same effect for non-fey wielders for 1 minute.',
-          "As long as the sword is attuned to you and has the stats of a fey weapon, you can cast {@spell dorian's daydream|fcs} once a week.",
+          "As long as the sword is attuned, you can cast {@spell dorian's daydream|fcs} once a week.",
         ],
       },
     ],
