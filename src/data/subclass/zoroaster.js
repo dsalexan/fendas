@@ -32,7 +32,7 @@ export default {
                   'Talk with your GM about setting up a encounter or a challange to develop your character and allow the vision of your star to manifest.',
                 ],
               },
-              '{@b Master.} You can spend at least 1 ki point and a bonus action to meditate over your breathing and gather the ki around you to enter your body, hardening your skin and boosting your muscles. During the next 1 minute you:',
+              '{@b Master.} You can spend at least 1 ki point and a bonus action to meditate over your breathing and gather the ki around you to enter your body, hardening your skin and boosting your muscles. During the next 1 minute:',
               {
                 type: 'list',
                 items: [
