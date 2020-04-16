@@ -7,6 +7,7 @@ import subclass from './data/subclass'
 import background from './data/background'
 import optional_feature from './data/optional_feature'
 import spell from './data/spell'
+import weapons from './data/weapons'
 
 import { asBestiary } from './data/characters'
 
@@ -39,6 +40,7 @@ export default function generate(base = {}) {
   obj.optionalfeature = optional_feature
   obj.spell = spell
   obj.monster = asBestiary
+  obj.item = weapons
 
   return obj
 }
