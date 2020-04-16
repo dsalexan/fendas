@@ -16,12 +16,12 @@ export default {
             name: 'Breathing Techniques',
             entries: [
               'Starting when you take this tradition at 3rd level, you will be ready to receive a vision with your star. Due to exhaustive training mimicking the movement and patterns of the starts you learn new ways to manipulate the ki around you to improve your offensive and defensive skills. The effects varies depending on your knowledge of the monastic tradition:',
-              '{@b Disciple.} You can spend 1 ki point and a action to meditate over your breathing and gather the ki around you to enter your body, hardening your skin and boosting your muscles. During the next 1 minute you:',
+              '{@b Disciple.} You can spend 1 ki point and a action to meditate over your breathing and gather the ki around you to enter your body, hardening your skin and boosting your muscles. During the next 1 minute:',
               {
                 type: 'list',
                 items: [
-                  'Have a bonus of +1 to your AC.',
-                  'Have a Strength score of 13 plus your Martial Arts die.',
+                  'You have a bonus of +1 to your AC.',
+                  'Your Strength score increases by your Martial Arts die size.',
                   'You count as one size larger for calculating carrying capacity.',
                 ],
               },
@@ -36,8 +36,8 @@ export default {
               {
                 type: 'list',
                 items: [
-                  'Have a bonus yo tour AC equals to +1 for each 2 ki points spent (minimum +1).',
-                  'Have a Strength score of 13 + your martial arts die + 1 for each 2 ki points spent.',
+                  'You have a bonus yo tour AC equals to +1 for each 2 ki points spent (minimum +1).',
+                  'Your Strength score increases by your Martial Arts die size + 1 for each 2 ki points spent (to a maximum of 30).',
                   'You count as two sizes larger for calculating carrying capacity.',
                 ],
               },
