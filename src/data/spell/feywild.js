@@ -36,7 +36,7 @@ export default [
     },
     classes: {},
     entries: [
-      'You can communicate with a known sleeping creature, creating a "dream place" with characteristics relatable to both where your minds are transported for 5 minutes.',
+      'You can communicate with a known creature, creating a "dream place" with characteristics relatable to both where your minds are transported for up to 5 minutes. Once the connection is severed, there is no discernible time passage.',
       'You can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5 percent chance that you cannot estabilish a line of communication.',
     ],
   },
