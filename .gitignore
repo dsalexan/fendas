@@ -108,7 +108,7 @@ dist
 src/schema/december/**/*
 src/schema/tools/**/*
 src/domain/**/*
-src/utils/**/*
+src/uatils/**/*
 schema/**/*
 domain/**/*
 autils/**/*
